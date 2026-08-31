@@ -6,8 +6,28 @@
     <title>Cheat sheet Variabler</title>
 </head>
 <body>
+    <h1>Variabler i JavaScript</h1>
+    <p>Hei, <span id="name"></span> (<span id="age">?</span> år)</p>
+
     <script>
-        
+        //DEKLARERE VARIABLER
+        /* 
+         *const: Deklarere en konstant verdi som ikke skal endre
+         *let: Deklarer en verdi som kan endres
+         */
+       const firstname = "Gjergj";
+       console.log(firstname)
+       const lastname = "Topalaj"
+       //Skriv ut firstname-verdi til en HTML-element med id name:
+       //Vi bruker konkatinering, altså slår sammen variabler og tekst for å skrive ut fornavn + etternavn:
+       document.getElementById("name").innerHTML = firstname + " " + lastname
+
+       //DEKLARERE EN VARIEBEL FOR ALDER
+       const birthYear = 2001
+       let age = 2026 - birthYear
+       document.getElementById("age").innerHTML = age
+
+
     </script>
 </body>
 </html>
