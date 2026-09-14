@@ -1,17 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing</title>
 </head>
 <body>
-    
-    <p>Jeg er <span id="alder"></span></p>
+    <h1>Alderskontroll</h1>
+    <p id="result"></p>
+    <script>
+        let age = 15
+        let message = ""
+        
+        if  (age >= 18) {
+            message = "Du er myndig"
+        }
+        else {
+            message = "Du er ikke myndig"
+        }
+        
+        document.getElementById("result").innerHTML = message
+        
+    </script>
+
+        <h1>Temperaturkontroll</h1>
+        <p id="temperatureResult"></p>
+
 
     <script>
-        const age = 25 år
-        document.getElementById("alder").innerHTML = age
+        let temperature = 10
+        let temperatureMessage = ""
+
+        if (temperature >= 20) {
+            temperatureMessage = "Det er varmt"
+        }
+        else {
+            temperatureMessage = "Det er kaldt"
+        }
+
+        document.getElementById("temperatureResult").innerHTML = temperatureMessage
     </script>
+
+
+<h1>Fraktkontroll</h1>
+<p id="frakt"></p>
+
+<script>
+    let orderPrice = 600
+    let orderMessage = ""
+
+    if (orderPrice >= 700) {
+        orderMessage = "Gratis Frakt"
+    }
+
+    else {
+        orderMessage = "Frakt koster 99 kr"
+    }
+
+    document.getElementById("frakt").innerHTML = orderMessage
+</script>
+
+
+<h1>Innlogging</h1>
+<p id="login"></p>
+
+<script>
+    let username = "Gjergj"
+    let password = "passord123"
+    let usernameResult = ""
+
+    if (username === "Gjergj" && password === "passord123") {
+        usernameResult = "Du er logget inn"
+    }
+    else {
+        usernameResult = "Feil brukernavn eller passord"
+    }
+
+    document.getElementById("login").innerHTML = usernameResult
+</script>
+
+<h1>Førerkortkontroll</h1>
+<p id="førerkort"></p>
+
+<script>
+    let drivingAge = 20
+    let hasLicense = "ja"
+    let drivingRight = ""
+
+    if (drivingAge >= 18 && hasLicense === "ja") {
+        drivingRight = "Du kan kjøre bil"
+    }
+
+    else {
+        drivingRight = "Du kan ikke kjøre bil"
+    }
+
+    document.getElementById("førerkort").innerHTML = drivingRight
+</script>
+
+
+<h1>Helgekontroll</h1>
+<p id="dag"></p>
+
+<script>
+    let day = "søndag"
+    let dayTeller = ""
+
+    if (day === "søndag" || day === "lørdag") {
+        dayTeller = "Det er helg"
+    }
+    else {
+        dayTeller = "Det er hverdag"
+    }
+
+    document.getElementById("dag").innerHTML = dayTeller
+</script>
+
+<h1>Gratis inngang</h1>
+<p id="inngang"></p>
+
+<script>
+    let studentAge = 25
+    let isStudent = "nei"
+    let inkom = ""
+
+    if (studentAge <= 18 || isStudent === "ja") {
+        inkom = "Gratis inngang"
+    }
+    else {
+        inkom = "Du må betale"
+    }
+
+    document.getElementById("inngang").innerHTML = inkom
+</script>
+
+
+<h1>Karakterer</h1>
+<p id="karakter"></p>
+
+<script>
+    let points = 72
+    let grade = ""
+
+    if (points >= 90) {
+        grade = "A"
+    }
+
+    else if (points >= 80) {
+        grade = "B"
+    }
+
+    else if (points >= 70) {
+        grade = "C"
+    }
+
+    else if (points >= 60) {
+        grade = "D"
+    }
+
+    else if (points >= 50) {
+        grade = "E"
+    }
+
+    else {
+        grade = "F"
+    }
+
+    document.getElementById("karakter").innerHTML = grade
+</script>
+
+<h1>Boolean</h1>
+<p id="innlogging"></p>
+
+<script>
+    let brukernavn = "Gjergj"
+    let passord = "passord123"
+    let loggedIn = false
+    let confirmation = ""
+
+    if (brukernavn === "Gjergj" && passord === "passord123") {
+        loggedIn = true
+    }
+
+
+    if (loggedIn === true) {
+        confirmation = "Du er logget inn"
+    }
+
+    else {
+        confirmation = "Du er ikke logget inn"
+    }
+
+    document.getElementById("innlogging").innerHTML = confirmation
+
+</script>
+   
 </body>
 </html>
