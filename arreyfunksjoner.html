@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheatSheet for Arrey funksjoner:</title>
+</head>
+<body>
+    <h1>Arrey Funksjoner</h1>
+    <p>Vi finner antall i en arrey ved å bruke .length: <span id="arreyCount"></span></p>
+    
+    <h2>To måter å skrive ut en arrey på:</h2>
+    <p>.toString(): <span id="toString"></span></p>
+    <p>.join(). <span id="join"></span></p>
+
+    <h2>Arrey etter slettemetoder er kjørt</h2>
+    <p id="deleted"></p>
+
+
+
+    <script>
+        const books = [
+        "Silver Eyes", 
+        "Harry Potter", 
+        "Fourth Wing", 
+        "Bibelen",
+        "Nålen",
+        "Jævla drittsystem",
+        "Don't make me think",
+        "Teisted ones",
+        "Surrounded by idiots",
+        ]
+
+        document.getElementById("arreyCount").innerHTML = books.length
+
+        //LEGGE TIL ELEMENTER I ARREYEN:
+
+        //.push(element): Legger inn elementet på slutten av arreyen
+        books.push("LOTR: FellowShip of the ring")
+
+        //.unshift(element): Legger til element i starten av arreyen, og forskyver indexer!
+        books.unshift("LOTR: Two towers")
+
+        //.splice(startindex, number of elements modified, element(s)):
+        //startindex: hvilken index vi bruker å manipulere arreyen på
+        //number of elements modified: Hvis vi skal slette elementer, hvor mange fra og med 
+        //startindex (eksempel: hvis startindex er 2, og antall elementer 2 slettes index 2 og 3). Når vi legger til elementer, skal number of elements modified alltid være 0
+        books.splice(5, 0, "LOTR:Return of the King")
+
+
+
+        //.toString(): Skriver ut en kommaseparert liste av en arrey
+        document.getElementById("toString").innerHTML = books.toString()
+
+         
+        //.join(param): join skriver ut alle elementenene i en arrey, separert av param
+        document.getElementById("join").innerHTML = books.join(", ")
+
+        //FJERNE ELEMENTER I ARREYEN:
+        //.pop(): Sletter det siste elementet i arreyen
+        books.pop()
+        //.shift(): Sletter det første elementet i arreyen
+        books.shift()
+        //.splice(starterindex, number of elements to delete)
+        //books.slice(4, 1)
+
+        //.indexOf(element): Finner det første elementet i arreyen som matcher parameteren param, og returnerer indexen.
+        const indexFound = books.indexOf("LOTR: return of the king")
+        console.log("Index til LOTR-bok: ", indexFound)
+
+        //Bruke indexOf-verdien i variabelen indexFound til å slette riktig bok:
+        books.splice(indexFound, 1)
+        //Hvis elementet vi forsøker å finne indexen til ikke finnes, returnerer indexOf -1
+
+        //Hvordan sjekke om en verdi finnes i en arrey:
+        const booksExists = books.includes("Fourth Wing")
+        console.log("Finnes Fourth Wing? ", booksExists)
+
+
+
+
+
+        document.getElementById("deleted").innerHTML = books.join(", ")
+        
+
+    </script>
+
+</body>
+</html>
