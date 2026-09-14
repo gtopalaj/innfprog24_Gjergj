@@ -13,6 +13,7 @@
         const username = "Gjergj"
         const password = "passord123"
         let loggedIn = false
+      
 
         //IF-test som sjekkker om innsendt brukernavn matcher systemet:
         if(username === "Gjergj") {
@@ -27,6 +28,10 @@
         console.log(loggedIn)
       }
 
+    //Sjekk om en bruker er logget inn, og oppdater grensesnoitt hvis den er det:
+     if(loggedIn) {
+            document.getElementById("loginStatus").innerHTML = "Hei, Gjergj"
+        }
 
     </script>
 </body>
