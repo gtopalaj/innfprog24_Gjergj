@@ -16,7 +16,7 @@
         <p>Later inn bøker...</p>
     </section>
 
-    
+
     <script>
         const bokregister = [
             {
@@ -45,6 +45,12 @@
         document.getElementById("book3Title").innerHTML = bokregister[2].title
         //Vi finner forfatter nr 2 på bok 2
         document.getElementById("book2Author2").innerHTML = bokregister[1].author.join(", ")
+
+         //Bruker .map for å hente alle bøker, og bygger HTML i booksHTML-variabelen: 
+         let booksHTML = ""
+         bokregister.map(b => { booksHTML += `<article><h3>${b.title}</h3></article>`})
+         console.log(booksHTML)
+         document.getElementById("books").innerHTML = booksHTML
     </script>
 </body>
 </html>
