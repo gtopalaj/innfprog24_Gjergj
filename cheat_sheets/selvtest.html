@@ -5,29 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing</title>
 </head>
+
 <body>
+
+    <!-- ALDERSKONTROLL -->
     <h1>Alderskontroll</h1>
     <p id="result"></p>
+
+
+    <!-- TEMPERATURKONTROLL -->
+    <h1>Temperaturkontroll</h1>
+    <p id="temperatureResult"></p>
+
+
+    <!-- FRAKTKONTROLL -->
+    <h1>Fraktkontroll</h1>
+    <p id="frakt"></p>
+
+
+    <!-- INNLOGGING -->
+    <h1>Innlogging</h1>
+    <p id="login"></p>
+
+
+    <!-- FØRERKORTKONTROLL -->
+    <h1>Førerkortkontroll</h1>
+    <p id="førerkort"></p>
+
+
+    <!-- HELGEKONTROLL -->
+    <h1>Helgekontroll</h1>
+    <p id="dag"></p>
+
+
+    <!-- GRATIS INNGANG -->
+    <h1>Gratis inngang</h1>
+    <p id="inngang"></p>
+
+
+    <!-- KARAKTERER -->
+    <h1>Karakterer</h1>
+    <p id="karakter"></p>
+
+
+    <!-- BOOLEAN -->
+    <h1>Boolean</h1>
+    <p id="innlogging"></p>
+
+
+    <!-- ADGANGSKONTROLL -->
+    <h1>Adgangskontroll</h1>
+    <p id="kontroll"></p>
+
+
+    <!-- FRUKT-ARRAY -->
+    <h2>Frukt-array</h2>
+    <p>Den første frukten er <span id="førsteFrukt"></span></p>
+    <p>Antall frukter: <span id="antallFrukter"></span></p>
+
+    <!--FARGE-ARRAY-->
+    <h2>Farge-array</h2>
+    <p>Antall farger: <span id="antallFarger"></span></p>
+    <p>Siste farge: <span id="sisteFarge"></span></p>
+
+    <!--DYR-ARRAY-->
+    <h2>Dyr-array</h2>
+    <p>Første dyr: <span id="førsteDyr"></span></p>
+    <p>Antall dyr: <span id="antallDyr"></span></p>
+
+    <!--BIL-ARRAY-->
+    <h2>Bil-array med splice</h2>
+    <p>Antall biler: <span id="antallBiler"></span></p>
+    <p>Bil på indeks 1: <span id="bilIndeks"></span></p>
+
+    <!--Array til tekst-->
+    <h2>Array til tekst</h2>
+    <p>Frukter: <span id="fruktTekst"></span></p>
+    <p>Frukter med mellomrom: <span id="fruktJoin"></span></p>
+
+
+
+
     <script>
+
+    
+
+    // .unshift() = legger til et element FØRST i arrayen
+    // .shift() =  fjerner FØRSTE elementet i arrayen
+    // .push() = legger til et element SIST i arrayen
+    // .pop = fjerner SISTE elementet i arrayen
+
+        // ========================================
+        // ALDERSKONTROLL
+        // ========================================
+
         let age = 15
         let message = ""
-        
-        if  (age >= 18) {
+
+        if (age >= 18) {
             message = "Du er myndig"
         }
         else {
             message = "Du er ikke myndig"
         }
-        
+
         document.getElementById("result").innerHTML = message
-        
-    </script>
-
-        <h1>Temperaturkontroll</h1>
-        <p id="temperatureResult"></p>
 
 
-    <script>
+
+        // ========================================
+        // TEMPERATURKONTROLL
+        // ========================================
+
         let temperature = 10
         let temperatureMessage = ""
 
@@ -39,161 +128,255 @@
         }
 
         document.getElementById("temperatureResult").innerHTML = temperatureMessage
+
+
+
+        // ========================================
+        // FRAKTKONTROLL
+        // ========================================
+
+        let orderPrice = 600
+        let orderMessage = ""
+
+        if (orderPrice >= 700) {
+            orderMessage = "Gratis Frakt"
+        }
+        else {
+            orderMessage = "Frakt koster 99 kr"
+        }
+
+        document.getElementById("frakt").innerHTML = orderMessage
+
+
+
+        // ========================================
+        // INNLOGGING
+        // ========================================
+
+        let username = "Gjergj"
+        let password = "passord123"
+        let usernameResult = ""
+
+        if (username === "Gjergj" && password === "passord123") {
+            usernameResult = "Du er logget inn"
+        }
+        else {
+            usernameResult = "Feil brukernavn eller passord"
+        }
+
+        document.getElementById("login").innerHTML = usernameResult
+
+
+
+        // ========================================
+        // FØRERKORTKONTROLL
+        // ========================================
+
+        let drivingAge = 20
+        let hasLicense = "ja"
+        let drivingRight = ""
+
+        if (drivingAge >= 18 && hasLicense === "ja") {
+            drivingRight = "Du kan kjøre bil"
+        }
+        else {
+            drivingRight = "Du kan ikke kjøre bil"
+        }
+
+        document.getElementById("førerkort").innerHTML = drivingRight
+
+
+
+        // ========================================
+        // HELGEKONTROLL
+        // ========================================
+
+        let day = "søndag"
+        let dayTeller = ""
+
+        if (day === "søndag" || day === "lørdag") {
+            dayTeller = "Det er helg"
+        }
+        else {
+            dayTeller = "Det er hverdag"
+        }
+
+        document.getElementById("dag").innerHTML = dayTeller
+
+
+
+        // ========================================
+        // GRATIS INNGANG
+        // ========================================
+
+        let studentAge = 25
+        let isStudent = "nei"
+        let inkom = ""
+
+        if (studentAge < 18 || isStudent === "ja") {
+            inkom = "Gratis inngang"
+        }
+        else {
+            inkom = "Du må betale"
+        }
+
+        document.getElementById("inngang").innerHTML = inkom
+
+
+
+        // ========================================
+        // KARAKTERER
+        // ========================================
+
+        let points = 72
+        let grade = ""
+
+        if (points >= 90) {
+            grade = "A"
+        }
+        else if (points >= 80) {
+            grade = "B"
+        }
+        else if (points >= 70) {
+            grade = "C"
+        }
+        else if (points >= 60) {
+            grade = "D"
+        }
+        else if (points >= 50) {
+            grade = "E"
+        }
+        else {
+            grade = "F"
+        }
+
+        document.getElementById("karakter").innerHTML = grade
+
+
+
+        // ========================================
+        // BOOLEAN
+        // ========================================
+
+        let brukernavn = "Gjergj"
+        let passord = "passord123"
+        let loggedIn = false
+        let confirmation = ""
+
+        if (brukernavn === "Gjergj" && passord === "passord123") {
+            loggedIn = true
+        }
+
+        if (loggedIn) {
+            confirmation = "Du er logget inn"
+        }
+        else {
+            confirmation = "Du er ikke logget inn"
+        }
+
+        document.getElementById("innlogging").innerHTML = confirmation
+
+
+
+        // ========================================
+        // ADGANGSKONTROLL
+        // ========================================
+
+        let personAge = 20
+        let hasTicket = true
+        let isBanned = false
+        let adgang = ""
+
+        if (isBanned) {
+            adgang = "Du er utestengt"
+        }
+        else if (personAge >= 18 && hasTicket) {
+            adgang = "Du kan komme inn"
+        }
+        else {
+            adgang = "Ingen adgang"
+        }
+
+        document.getElementById("kontroll").innerHTML = adgang
+
+
+
+        // ========================================
+        // FRUKT-ARRAY
+        // ========================================
+
+        // .push()    → legg til BAKERST
+        // .unshift() → legg til FØRST
+
+        const frukter = ["Eple", "Banan", "Appelsin"]
+
+        frukter.unshift("Jordbær")
+        frukter.push("Fersken")
+
+        document.getElementById("førsteFrukt").innerHTML = frukter[0]
+        document.getElementById("antallFrukter").innerHTML = frukter.length
+
+        console.log(frukter)
+
+        // ============================================
+        // FARGE-ARRAY 
+        //=============================================
+
+        //.pop fjerner den siste indexen i arrayen
+        
+
+        const colors = ["Rød", "Blå", "Grønn", "Gul"]
+        colors.pop()
+
+        document.getElementById("antallFarger").innerHTML = colors.length
+        document.getElementById("sisteFarge").innerHTML = colors[2]
+
+        console.log(colors)
+
+        // ============================================
+        // DYR-ARRAY 
+        //=============================================
+        
+        //.shift fjerner den første indexen i arrayen
+
+        const animals = ["Hund", "Katt", "Hest", "Kanin"]
+        animals.shift()
+
+        document.getElementById("førsteDyr").innerHTML = animals[0]
+        document.getElementById("antallDyr").innerHTML = animals.length
+
+        console.log(animals)
+
+        // ============================================
+        // BIL-ARRAY 
+        //=============================================
+
+        //.splice() kan fjerne, legge til eller erstatte elementer hvor som helst i arrayen
+
+        const spliceCars = ["BMW", "Audi", "Tesla", "Mercedes"]
+
+        spliceCars.splice(1,1, "Volvo")
+
+        document.getElementById("antallBiler").innerHTML = spliceCars.length
+        document.getElementById("bilIndeks").innerHTML = spliceCars[1]
+
+        console.log(spliceCars)
+
+        // ============================================
+        // Array til tekst 
+        //=============================================
+
+        // .tostring endrer ikke selve arrayen, den lager en tekstversjon av den og gir automatisk komma mellom indeksene
+        // .join lar deg bestemme selv hva som skal stå mellom elementene
+
+        const stringFruits = ["Eple", "Banan", "Appelsin"]
+        
+        document.getElementById("fruktTekst").innerHTML = stringFruits.toString()
+        document.getElementById("fruktJoin").innerHTML = stringFruits.join(" / ")
+
+
+
     </script>
 
-
-<h1>Fraktkontroll</h1>
-<p id="frakt"></p>
-
-<script>
-    let orderPrice = 600
-    let orderMessage = ""
-
-    if (orderPrice >= 700) {
-        orderMessage = "Gratis Frakt"
-    }
-
-    else {
-        orderMessage = "Frakt koster 99 kr"
-    }
-
-    document.getElementById("frakt").innerHTML = orderMessage
-</script>
-
-
-<h1>Innlogging</h1>
-<p id="login"></p>
-
-<script>
-    let username = "Gjergj"
-    let password = "passord123"
-    let usernameResult = ""
-
-    if (username === "Gjergj" && password === "passord123") {
-        usernameResult = "Du er logget inn"
-    }
-    else {
-        usernameResult = "Feil brukernavn eller passord"
-    }
-
-    document.getElementById("login").innerHTML = usernameResult
-</script>
-
-<h1>Førerkortkontroll</h1>
-<p id="førerkort"></p>
-
-<script>
-    let drivingAge = 20
-    let hasLicense = "ja"
-    let drivingRight = ""
-
-    if (drivingAge >= 18 && hasLicense === "ja") {
-        drivingRight = "Du kan kjøre bil"
-    }
-
-    else {
-        drivingRight = "Du kan ikke kjøre bil"
-    }
-
-    document.getElementById("førerkort").innerHTML = drivingRight
-</script>
-
-
-<h1>Helgekontroll</h1>
-<p id="dag"></p>
-
-<script>
-    let day = "søndag"
-    let dayTeller = ""
-
-    if (day === "søndag" || day === "lørdag") {
-        dayTeller = "Det er helg"
-    }
-    else {
-        dayTeller = "Det er hverdag"
-    }
-
-    document.getElementById("dag").innerHTML = dayTeller
-</script>
-
-<h1>Gratis inngang</h1>
-<p id="inngang"></p>
-
-<script>
-    let studentAge = 25
-    let isStudent = "nei"
-    let inkom = ""
-
-    if (studentAge <= 18 || isStudent === "ja") {
-        inkom = "Gratis inngang"
-    }
-    else {
-        inkom = "Du må betale"
-    }
-
-    document.getElementById("inngang").innerHTML = inkom
-</script>
-
-
-<h1>Karakterer</h1>
-<p id="karakter"></p>
-
-<script>
-    let points = 72
-    let grade = ""
-
-    if (points >= 90) {
-        grade = "A"
-    }
-
-    else if (points >= 80) {
-        grade = "B"
-    }
-
-    else if (points >= 70) {
-        grade = "C"
-    }
-
-    else if (points >= 60) {
-        grade = "D"
-    }
-
-    else if (points >= 50) {
-        grade = "E"
-    }
-
-    else {
-        grade = "F"
-    }
-
-    document.getElementById("karakter").innerHTML = grade
-</script>
-
-<h1>Boolean</h1>
-<p id="innlogging"></p>
-
-<script>
-    let brukernavn = "Gjergj"
-    let passord = "passord123"
-    let loggedIn = false
-    let confirmation = ""
-
-    if (brukernavn === "Gjergj" && passord === "passord123") {
-        loggedIn = true
-    }
-
-
-    if (loggedIn === true) {
-        confirmation = "Du er logget inn"
-    }
-
-    else {
-        confirmation = "Du er ikke logget inn"
-    }
-
-    document.getElementById("innlogging").innerHTML = confirmation
-
-</script>
-   
 </body>
 </html>
