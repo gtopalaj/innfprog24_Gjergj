@@ -6,86 +6,41 @@
     <title>Repitisjon Arrays</title>
 </head>
 <body>
-    <h1>Repitisjonsoppgave:</h1>
-
-    <h2>Mine spill</h2>
-    <p>Første spill: <span id="forsteSpill"></span></p>
-    <p>Siste spill: <span id="sisteSpill"></span></p>
-    <p>Antall spill: <span id="antallSpill"></span></p>
-    <p>Alle spill: <span id="alleSpill"></span></p>
-
-    <h1>Land</h1>
-    <p>Første land: <span id="forsteLand"></span></p>
-    <p>Siste land: <span id="sisteLand"></span></p>
-    <p>Antall land: <span id="antallLand"></span></p>
-    <p>Alle land: <span id="alleLand"></span></p>
-
-    <h1>Mat</h1>
-    <p>Første mat: <span id="forsteMat"></span></p>
-    <p>Siste mat: <span id="sisteMat"></span></p>
-    <p>Antall: <span id="antallMat"></span></p>
-    <p>Alle: <span id="alleMat"></span></p>
-
-
-    <h1>toString og join</h1>
-    <p>toString: <span id="toString"></span></p>
-    <p>join: <span id="join"></span></p>
-
-    <h1>finn spiller</h1>
-    <p>Messi ligger på indeks: <span id="indexFound"></span></p>
-
+ <section id="alt"></section>
 
     <script>
-        const games = ["GTA", "Minecraft", "FIFA"]
-        games.unshift("Fortnite")
-        games.push("Call Of Duty")
+const products = [
+    { name: "Laptop", price: 12000 },
+    { name: "Mus", price: 500 },
+    { name: "Tastatur", price: 1200 }
+]
 
-        document.getElementById("forsteSpill").innerHTML = games[0]
-        document.getElementById("sisteSpill").innerHTML = games[4]
-        document.getElementById("antallSpill").innerHTML = games.length
-        document.getElementById("alleSpill").innerHTML = games.join(", ")
-        
-        console.log(games)
-
-        const countries = ["Norge", "Sverige", "Danmark", "Finland"]
-        countries.pop()
-        countries.shift()
-
-        document.getElementById("forsteLand").innerHTML = countries[0]
-        document.getElementById("sisteLand").innerHTML = countries[1]
-        document.getElementById("antallLand").innerHTML = countries.length
-        document.getElementById("alleLand").innerHTML = countries.join(" - ")
-
-        console.log(countries)
-
-        const food = ["Burger", "Pizza", "Taco"]
-        food.shift()
-        food.pop()
-        food.unshift("Pasta")
-        food.push("Kebab")
-
-        document.getElementById("forsteMat").innerHTML = food[0]
-        document.getElementById("sisteMat").innerHTML = food[2]
-        document.getElementById("antallMat").innerHTML = food.length
-        document.getElementById("alleMat").innerHTML = food.join(", ")
-
-
-        console.log(food)
-
-        const names = ["Gjergj", "Sarah", "Ilirian"]
-
-        document.getElementById("toString").innerHTML = names.toString()
-        document.getElementById("join").innerHTML = names.join(" | ")
-
-        const player = ["Haaland", "Messi", "Ronaldo", "Mbappe"]
-        let messi = player.indexOf("Messi")
-        
-
-        document.getElementById("indexFound").innerHTML = messi
-        
+let productsHTML = ""
 
 
 
+products.map(p=>{
+    let priceMessage = ""
+
+    if (p.price >= 1000){
+    console.log("Dyrt produkt")
+    priceMessage = "Dyrt Produkt"
+}
+    else {
+        console.log("Billig produkt")
+        priceMessage = "Billig Produkt"
+    }
+
+    productsHTML += `<article><h3>${p.name}</h3><p>Pris: ${p.price}</p><p>${priceMessage}</p></article>`
+    
+})
+
+
+
+document.getElementById("alt").innerHTML = productsHTML 
+
+
+ 
     </script>
 </body>
 </html>
