@@ -6,41 +6,10 @@
     <title>Repitisjon Arrays</title>
 </head>
 <body>
- <section id="alt"></section>
+
 
     <script>
-const products = [
-    { name: "Laptop", price: 12000 },
-    { name: "Mus", price: 500 },
-    { name: "Tastatur", price: 1200 }
-]
 
-let productsHTML = ""
-
-
-
-products.map(p=>{
-    let priceMessage = ""
-
-    if (p.price >= 1000){
-    console.log("Dyrt produkt")
-    priceMessage = "Dyrt Produkt"
-}
-    else {
-        console.log("Billig produkt")
-        priceMessage = "Billig Produkt"
-    }
-
-    productsHTML += `<article><h3>${p.name}</h3><p>Pris: ${p.price}</p><p>${priceMessage}</p></article>`
-    
-})
-
-
-
-document.getElementById("alt").innerHTML = productsHTML 
-
-
- 
     </script>
 </body>
 </html>

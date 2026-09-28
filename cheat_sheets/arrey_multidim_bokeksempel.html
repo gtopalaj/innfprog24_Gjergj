@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array Cheat Sheet: Multidimensjonal array</title>
+    <style>
+        #books, #longreads {
+            display: flex;
+            gap: .5rem;
+        }
+        article {
+            border: 1px solid silver;
+            background-color: lightgrey;
+            padding: .5rem;
+            box-sizing: border-box;
+            width: 33%;
+        }
+    </style>
 </head>
 <body>
     <h2>Referansetest</h2>
@@ -16,6 +29,11 @@
         <p>Later inn bøker...</p>
     </section>
 
+    <h2>Langlesning</h2>
+    <section id="longreads">
+        <p>Laster inn nye bøker...</p>
+    </section>
+
 
     <script>
         const bokregister = [
@@ -23,7 +41,7 @@
                 title: "Fourth Wing",
                 author: ["Rebecca Yarros"],
                 pagecount: 512,
-                isbn: 9783423220996
+                isbn: 9780349437019
             },
             {
                 title: "Silver Eyes",
@@ -35,7 +53,7 @@
                 title: "Harry Potter: De vises sten",
                 author: ["JK Rowling"],
                 pagecount: 333,
-                isbn: 9788202434687
+                isbn: 9781408855652
             }
         ]
 
@@ -48,9 +66,43 @@
 
          //Bruker .map for å hente alle bøker, og bygger HTML i booksHTML-variabelen: 
          let booksHTML = ""
-         bokregister.map(b => { booksHTML += `<article><h3>${b.title}</h3></article>`})
+         bokregister.map(b => { 
+            
+            booksHTML += 
+            `<article>
+                <img src="https://covers.openlibrary.org/b/isbn/${b.isbn}-M.jpg" />
+                <h3>${b.title}</h3>
+                <p class="isbnnumber">ISBN: ${b.isbn}</p>
+                <p>${b.author.length === 1 ? "Forfatter" : "Forfattere"}: ${b.author.join(", ")}
+                    <p>Sidetall: ${b.pagecount}</p>
+            </article>`
+        })
+
          console.log(booksHTML)
+
          document.getElementById("books").innerHTML = booksHTML
+
+        //Bruker .filter for å filtere ut bøker med mer enn 400 sider.
+        let longreadHTML = ""
+        const longReads = bokregister.filter(l => l.author.pagecount >= 400)
+        console.log("longread: ", longReads)
+
+        longReads.map(l => {
+           longreadHTML += 
+            `<article>
+                <img src="https://covers.openlibrary.org/b/isbn/${l.isbn}-M.jpg" />
+                <h3>${l.title}</h3>
+                <p class="isbnnumber">ISBN: ${l.isbn}</p>
+                <p>${l.author.length === 1 ? "Forfatter" : "Forfattere"}: ${l.author.join(", ")}
+                    <p>Sidetall: ${l.pagecount}</p>
+            </article>`
+        })
+
+        document.getElementById("longreads").innerHTML = longreadHTML
+
+        
+
+
     </script>
 </body>
 </html>
