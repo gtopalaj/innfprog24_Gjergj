@@ -6,9 +6,42 @@
     <title>Repitisjon Arrays</title>
 </head>
 <body>
-
-
+<section id="powerfulCars"></section>
     <script>
+const cars = [
+    { brand: "BMW", horsepower: 400 },
+    { brand: "Toyota", horsepower: 180 },
+    { brand: "Audi", horsepower: 350 },
+    { brand: "Volvo", horsepower: 220 }
+]
+
+const powerCars = cars.filter(c => c.horsepower >= 300)
+let powerCarsHTML = ""
+
+powerCars.map(p => {
+    powerCarsHTML +=
+    `
+    <article>
+        <h3>${p.brand}</h3>
+        <p>${p.horsepower} HK</p>
+    </article>
+    `
+})
+
+console.log(powerCars)
+document.getElementById("powerfulCars").innerHTML = powerCarsHTML
+
+function calculateTotal(price, quantity){
+    let total = price*quantity
+    return total
+}
+
+let result = calculateTotal(250, 4)
+
+if (result >= 900){
+    console.log("dyrt")
+}
+
 
     </script>
 </body>

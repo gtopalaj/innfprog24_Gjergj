@@ -84,7 +84,7 @@
 
         //Bruker .filter for å filtere ut bøker med mer enn 400 sider.
         let longreadHTML = ""
-        const longReads = bokregister.filter(l => l.author.pagecount >= 400)
+        const longReads = bokregister.filter(l => l.pagecount >= 400)
         console.log("longread: ", longReads)
 
         longReads.map(l => {
