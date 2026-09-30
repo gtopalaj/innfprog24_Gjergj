@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions, oppgave 1</title>
+</head>
+<body>
+    
+    <script>
+       
+
+        //--------------------------------------------------------------------------------------
+        //Oppgave 1:
+        
+        const peoplee = ["Marius", "Tore", "Sussanne", "Monica", "Arne", "Zoltan", "Beate"]
+    
+        //lage funskjon:
+        function sortArray(array){
+            
+            //Sortere arrayet:
+            array.sort()
+
+            //lage en ny p-tag:
+            const ptag = document.createElement("p")
+
+            //fylle ptag med arrayet
+            ptag.innerHTML = array.join(", ")
+
+            //Skrive ut p-tag til nettside
+            document.body.appendChild(ptag)
+
+            //testutskrift
+            console.log(array)
+        }
+        sortArray(peoplee)
+
+      
+
+        
+        
+
+
+    </script>
+</body>
+</html>

@@ -6,41 +6,66 @@
     <title>Repitisjon Arrays</title>
 </head>
 <body>
-<section id="powerfulCars"></section>
+
+    <p> <span id="koko"></span></p>
     <script>
-const cars = [
-    { brand: "BMW", horsepower: 400 },
-    { brand: "Toyota", horsepower: 180 },
-    { brand: "Audi", horsepower: 350 },
-    { brand: "Volvo", horsepower: 220 }
+const drivers = [
+    { name: "Ali", age: 19, rating: 5, experience: 0 },
+    { name: "Sara", age: 24, rating: 4, experience: 3 },
+    { name: "Jonas", age: 22, rating: 3, experience: 1 },
+    { name: "Emma", age: 19, rating: 4, experience: 0 },
+    { name: "Luan", age: 27, rating: 5, experience: 6 }
 ]
 
-const powerCars = cars.filter(c => c.horsepower >= 300)
-let powerCarsHTML = ""
+const ratingLevels = [
+    { text: "Dårlig", rating: 1 },
+    { text: "Under middels", rating: 2 },
+    { text: "Middels", rating: 3 },
+    { text: "Bra", rating: 4 },
+    { text: "Utmerket", rating: 5 }
+]
 
-powerCars.map(p => {
-    powerCarsHTML +=
-    `
-    <article>
-        <h3>${p.brand}</h3>
-        <p>${p.horsepower} HK</p>
-    </article>
-    `
+let totalRating = 0
+
+
+drivers.map(r=>{
+    totalRating += r.rating
+})
+let averageRating = totalRating/drivers.length
+let roundedRating = Math.ceil(averageRating)
+let finalRating = ratingLevels.filter(l=> roundedRating === l.rating)
+
+console.log(finalRating[0].text)
+
+let ratingFive = 0
+
+drivers.map(f => {
+    if (f.rating === 5){
+        ratingFive++
+    }
 })
 
-console.log(powerCars)
-document.getElementById("powerfulCars").innerHTML = powerCarsHTML
+let totalAge = 0
+drivers.map(a=>{
+    totalAge += a.age
+})
 
-function calculateTotal(price, quantity){
-    let total = price*quantity
-    return total
-}
+let averageAge = (totalAge/drivers.length).toFixed(2)
 
-let result = calculateTotal(250, 4)
+let akkuratNitten = 0
 
-if (result >= 900){
-    console.log("dyrt")
-}
+drivers.map(n=> {
+    if (n.age === 19){
+        akkuratNitten++
+    }
+})
+
+let minimumEtt = 0
+drivers.map(m=>{
+    if(m.experience >= 1){
+        minimumEtt++
+    }
+})
 
 
     </script>
