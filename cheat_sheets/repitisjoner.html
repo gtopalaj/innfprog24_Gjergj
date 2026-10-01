@@ -9,65 +9,9 @@
 
     <p> <span id="koko"></span></p>
     <script>
-const drivers = [
-    { name: "Ali", age: 19, rating: 5, experience: 0 },
-    { name: "Sara", age: 24, rating: 4, experience: 3 },
-    { name: "Jonas", age: 22, rating: 3, experience: 1 },
-    { name: "Emma", age: 19, rating: 4, experience: 0 },
-    { name: "Luan", age: 27, rating: 5, experience: 6 }
-]
-
-const ratingLevels = [
-    { text: "Dårlig", rating: 1 },
-    { text: "Under middels", rating: 2 },
-    { text: "Middels", rating: 3 },
-    { text: "Bra", rating: 4 },
-    { text: "Utmerket", rating: 5 }
-]
-
-let totalRating = 0
-
-
-drivers.map(r=>{
-    totalRating += r.rating
-})
-let averageRating = totalRating/drivers.length
-let roundedRating = Math.ceil(averageRating)
-let finalRating = ratingLevels.filter(l=> roundedRating === l.rating)
-
-console.log(finalRating[0].text)
-
-let ratingFive = 0
-
-drivers.map(f => {
-    if (f.rating === 5){
-        ratingFive++
-    }
-})
-
-let totalAge = 0
-drivers.map(a=>{
-    totalAge += a.age
-})
-
-let averageAge = (totalAge/drivers.length).toFixed(2)
-
-let akkuratNitten = 0
-
-drivers.map(n=> {
-    if (n.age === 19){
-        akkuratNitten++
-    }
-})
-
-let minimumEtt = 0
-drivers.map(m=>{
-    if(m.experience >= 1){
-        minimumEtt++
-    }
-})
-
-
+        function calculateArea(length, width){
+            let area = length
+        }
     </script>
 </body>
 </html>
